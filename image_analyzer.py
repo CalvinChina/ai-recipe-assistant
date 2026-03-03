@@ -127,7 +127,8 @@ class ImageAnalyzer:
         
         try:
             result = json.loads(content)
-            result["image_path"] = image_path
+            if isinstance(result, dict):
+                result["image_path"] = image_path
             print("✅ 识别完成！")
             return result
         except json.JSONDecodeError as e:
@@ -198,7 +199,8 @@ class ImageAnalyzer:
         
         try:
             result = json.loads(content)
-            result["image_path"] = image_path
+            if isinstance(result, dict):
+                result["image_path"] = image_path
             print("✅ 识别完成！")
             return result
         except json.JSONDecodeError as e:
@@ -224,6 +226,8 @@ def main():
     
     image_path = input("请输入图片路径: ").strip()
     
+    # 处理转义字符（如 \ 空格）
+    image_path = image_path.replace("\\ ", " ")
     # 去掉可能的引号
     image_path = image_path.strip("\"'")
     
