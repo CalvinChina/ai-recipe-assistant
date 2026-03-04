@@ -1,30 +1,19 @@
-# AI Recipe Assistant
+---
+title: AI Recipe Assistant
+emoji: 🍳
+colorFrom: blue
+colorTo: yellow
+sdk: docker
+pinned: false
+license: mit
+---
 
-智谱 API 驱动的智能菜谱助手。
+# 🍳 AI 菜谱助手
 
-## 功能
+基于智谱 GLM-4 的智能菜谱助手，支持：
 
-- 菜谱问答
-- 食材分析
-- 结构化输出
+- 💬 **对话** - 询问任何烹饪问题
+- 📝 **菜谱解析** - 粘贴文本自动提取结构化信息
+- 📷 **图片识别** - 上传菜品照片识别菜名和食材
 
-## 安装
-
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-## 配置
-
-```bash
-cp .env.example .env
-# 编辑 .env 填入你的 API Key
-```
-
-## 运行
-
-```bash
-python main.py
-```
+Powered by [智谱 AI](https://open.bigmodel.cn)
